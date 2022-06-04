@@ -11,7 +11,7 @@ const SearchParams = () => {
   const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
 
-  // here will be an async funcion
+  // works the same as componentDidMount in class components
   useEffect(() => {
     requestPets();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
