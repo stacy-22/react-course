@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import ThemeContext from "./ThemeContext";
 import Results from "./Results";
 import useBreedList from "./useBreedList";
 
@@ -10,6 +11,7 @@ const SearchParams = () => {
   const [breed, setBreed] = useState("");
   const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
+  const [theme, setTheme] = useContext(ThemeContext);
 
   // works the same as componentDidMount in class components
   useEffect(() => {
@@ -78,7 +80,20 @@ const SearchParams = () => {
           </select>
         </label>
 
-        <button>Submit</button>
+        <label htmlFor="theme">
+          Theme
+          <select
+            value={theme}
+            onChange={(event) => setTheme(event.target.value)}
+            onBlur={(event) => setTheme(event.target.value)}
+          >
+            <option value="darkblue">Darkblue</option>
+            <option value="peru">Peru</option>
+            <option value="chartreuse">Chartreuse</option>
+            <option value="mediumorchid">Medium Orchid</option>
+          </select>
+        </label>
+        <button style={{ backgroundColor: theme }}>Submit</button>
       </form>
 
       <Results pets={pets} />
