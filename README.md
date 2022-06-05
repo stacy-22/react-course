@@ -10,3 +10,6 @@ Here the course steps will be described.
 
 - html:5 - paste the html structure
 - in new versions of react we don't have to use `import react` directly in each module
+
+# Ways to expand project
+https://btholt.github.io/complete-intro-to-react-v6/ways-to-expand-your-app
